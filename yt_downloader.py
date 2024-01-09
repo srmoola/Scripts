@@ -1,6 +1,13 @@
+import os
 from pytube import YouTube
 
-SAVE_PATH = "/Users/satyadev/Desktop/Python Projects/Scripts/videos"
+USER_PATH = os.path.expanduser('~')
+SAVE_PATH = os.path.join(os.path.join(USER_PATH, "Desktop"), "yt-downscript-videos")
+
+try:
+	os.mkdir(SAVE_PATH)
+except:
+	pass
 
 def download_video(yt_video_link):
 
